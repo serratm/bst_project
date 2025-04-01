@@ -113,18 +113,18 @@ class BinarySearchTree:
     def __str__(self):
         return pretty_tree(self)
 
-    def getmin(self, current_node):
+    def getmin(self):
         current_node = self.root
         if current_node is None:
             return None
         while current_node.left is not None:
             current_node = current_node.left
-        return current_node
+        return current_node.key
 
-    def getmax(self, current_node):
+    def getmax(self):
         current_node = self.root
         if current_node is None:
             return None
         while current_node.right is not None:
             current_node = current_node.right
-        return current_node
+        return current_node.key
