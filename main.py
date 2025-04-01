@@ -17,11 +17,17 @@ print()
 
 
 while True:
+    
     new_key = int(input('Enter a new key to insert: '))
     new_node = Node(new_key)
     tree.insert(new_node)
+    print()
+    print('Tree after adding %d:' % new_key)
     print(tree)
     print()
+    
+
+
 
     remove_value = int(input('Enter value to remove: '))
     print()
@@ -33,12 +39,16 @@ while True:
 
     user_input = input('Do you want to continue? (yes/no): ')
     if user_input.lower() in ["yes", "y"]:
-        continue_loop = True
+        continue
     elif user_input.lower() in ["no", "n"]:
-        continue_loop = False
+        print()
+        print('Exiting ')
+        break
 
+print()
 min_value = tree.getmin()
 print('Minimum Number in tree %d:'% min_value)
 
+print()
 max_value = tree.getmax()
 print('Maximum Number in tree %d:' % max_value)
