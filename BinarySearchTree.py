@@ -112,3 +112,19 @@ class BinarySearchTree:
     # getting the string representation of the root.
     def __str__(self):
         return pretty_tree(self)
+
+    def getmin(self, current_node):
+        current_node = self.root
+        if current_node is None:
+            return None
+        while current_node.left is not None:
+            current_node = current_node.left
+        return current_node
+
+    def getmax(self, current_node):
+        current_node = self.root
+        if current_node is None:
+            return None
+        while current_node.right is not None:
+            current_node = current_node.right
+        return current_node
